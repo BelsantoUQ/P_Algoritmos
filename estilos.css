@@ -1,0 +1,65 @@
+* {
+	margin:0;
+	padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkgray;
+    background-image: url("/recursos/miFondoIdeal.svg");
+}
+
+div .block{
+    background-color: transparent;
+    left: 50px;
+    width: 250px;
+    height: 250px;
+    margin: 5px;
+    border: 2px dotted;
+    display: inline-block;
+    position: absolute;
+    
+  }
+div .block .frente{
+    
+    display: inline-block;
+    height:8.1rem;
+    width:auto; 
+    position: absolute;
+    
+}
+.frente img{
+    height: 100%;
+    
+} 
+div .block .atras{
+    display: inline-block;
+    height:8.1rem;
+    width:auto;
+    position: absolute;
+    margin-top: 50px;
+}
+.atras img{
+    height: 100%;
+}    
+div .block .arriba{
+    display: inline-block;
+    width:8.1rem;
+    height:auto;
+    position: absolute;
+}
+.arriba img{
+    width: 100%;
+}  
+div .block .abajo{
+    display: inline-block;
+    width:8.1rem;
+    height:auto;
+    position: absolute;
+}
+.abajo img{
+    width: 100%;
+    margin-left: 50px;
+}    
