@@ -2,15 +2,14 @@
 var movimientos =0;
 var repetidos = 0;
 var giros = 0;
-var i =0;
-var j =0;
+
 var frente =true;
 var atras =false;
 var abajo =false;
 var arriba =false;
-var ansI=4; 
-var ansJ= 3;
-var ans= 43;
+
+var superado = 0;
+var intentosUser = [];
 
 let sequence = [[00, 01, 02, 03, 04, 05, 06, 07], 
                 [10, 11, 12, 13, 14, 15, 16, 17], 
@@ -42,76 +41,135 @@ let bSequence = [[true, false, false, false, false, false, false, false],
     opacity: '0'                               	            
   });
 
-
-     // ********//Para avanzar//************// */
-$( ".avanzar" ).click(function() {
-  
-  /* movimiento horizontal*/
-  if(frente){
-    if(j<7){
-    //Adelantar
-      $( ".block" ).animate({ "left": "+=150px" }, "slow" );
-      j++;
-      movimientos++;
-    }
-  }
-  if(atras){
-    if(j>0){
-    //Atrasar
-      $( ".block" ).animate({ "left": "-=150px" }, "slow" );
-      j--;
-      movimientos++;
-    }
-  }
-
-  /* movimiento vertical*/
-  if(abajo){
-    if(i<5){
-    //Descender
-      $( ".block" ).animate({ "top": "+=150px" }, "slow" );
-      i++;
-      movimientos++;
-    }
-  }
-  if(arriba){
-    if(i>0){
-    //Ascender 
-      $( ".block" ).animate({ "top": "-=150px" }, "slow" );
-      i--;
-      movimientos++;
-    }
-  }
-  if(bSequence[i][j]){
-    repetidos++;
-  }else{
-    bSequence[i][j]=true;
-  }
+function validarObjetivo(){
   if(sequence[ansI][ansJ]==sequence[i][j]){
     //Objetivo logrado
-    setTimeout(() => { 
-      alert('Prueba finalizada. '+ 
-      '\n Movimientos: '+movimientos 
-      + '\n Giros: '+giros 
-      + '\n Cuadricula repetidas: '+repetidos 
-    )}, 600);
+    superado =1;
+  }
     $.ajax({
       method:"POST",
-      url: "mainPrueba1.php",
-      data: { movimientos,giros,repetidos}
+      url: "mainPrueba.php",
+      data: { movimientos,giros,repetidos,superado}
     })
       .done(function(response ){
         $('.mostrarResultados').html(response);
       });
       
     
-  } 
+   
+}
+     // ********//Para avanzar//************// */
+     
+     function dibujar_despacio(x) {
+      if (x < intentosUser.length) {
+        console.log(x);
+        //papel.drawImage(tiranosaurio.imagen, 100, x)
+        if(intentosUser[x]=="moverse"){
+          driveAirplane();
+        }
+        if(intentosUser[x]=="izquierda"){
+          giroIzq();
+        }
+        if(intentosUser[x]=="derecha"){
+          giroDer();
+        }
+        setTimeout(() => dibujar_despacio(x+1), 1000);
+      }else{
+        validarObjetivo();
+      }
+    }     
+$( ".valiadarIntento" ).click(function() {
+
+ 
+  dibujar_despacio(0);
+  
   });
+
+
+  $( ".avanzar" ).click(function() {
+    if(frente){
+      if(j<7){
+        intentosUser.push("moverse");
+      }
+    }
+    if(atras){
+      if(j>0){
+        
+    intentosUser.push("moverse");
+      }
+    }
+  
+    /* movimiento vertical*/
+    if(abajo){
+      if(i<5){
+    intentosUser.push("moverse");
+      }
+    }
+    if(arriba){
+      if(i>0){
+    intentosUser.push("moverse");
+      }
+    }
+
+  
+
+  });
+
+  function driveAirplane(){
+     /* movimiento horizontal*/
+     if(frente){
+      if(j<7){
+      //Adelantar
+      moverDerecha();
+        j++;
+        movimientos++;
+      }
+    }
+    if(atras){
+      if(j>0){
+      //Atrasar
+      moverIzquierda();
+        j--;
+        movimientos++;
+      }
+    }
+  
+    /* movimiento vertical*/
+    if(abajo){
+      if(i<5){
+      //Descender
+      moverAbajo();
+        i++;
+        movimientos++;
+      }
+    }
+    if(arriba){
+      if(i>0){
+      //Ascender 
+        moverArriba();
+        i--;
+        movimientos++;
+      }
+    }
+
+ 
+  if(bSequence[i][j]){
+    repetidos++;
+  }else{
+    bSequence[i][j]=true;
+  }
+ 
+  }
 
 
    //*****Para la rotacion del objeto hacia la izquierda*/
 
   $(".turnLeft").click(function(){
     giros++;
+    intentosUser.push("izquierda");
+    
+  });
+  function giroIzq(){
     if(frente){
       opacarFrente();
       mostrarArriba();
@@ -137,11 +195,15 @@ $( ".avanzar" ).click(function() {
       arriba=false;
       atras=true;
     }
-  });
+  }
 
   // *** /// ***Para la rotacion del objeto hacia la derecha /// *** /// /***// //***/
   $( ".turnRight" ).click(function(){
     giros++;
+    
+    intentosUser.push("derecha");
+  });
+  function giroDer(){
     if(frente){
       opacarFrente();
       mostrarAbajo();
@@ -167,8 +229,27 @@ $( ".avanzar" ).click(function() {
       arriba=false;
       frente=true;
     }
-  });
+  }
+//////////////////**movimiento *////////////////////////
+  function moverDerecha(){
+    
+    $( ".block" ).animate({ "left": "+=150px" }, "slow" );
+  }
 
+  function moverIzquierda(){
+    
+    $( ".block" ).animate({ "left": "-=150px" }, "slow" );
+  }
+
+  function moverArriba(){
+    
+    $( ".block" ).animate({ "top": "-=150px" }, "slow" );
+  }
+
+  function moverAbajo(){
+    
+    $( ".block" ).animate({ "top": "+=150px" }, "slow" );
+  }
 
 //////// ****** mostrar avion ****** ///////////
 function mostrarFrente() { 
@@ -180,19 +261,19 @@ function mostrarFrente() {
 function mostrarAtras() { 
   $('.atras').animate({
     opacity: '1'                               	            
-  });
+  }, "slow" );
  }
 
  function mostrarAbajo() { 
   $('.abajo').animate({
     opacity: '1'                               	            
- });
+ }, "slow" );
 }
 
 function mostrarArriba() {  
   $('.arriba').animate({
     opacity: '1'                               	            
-  });
+  }, "slow" );
 }
 
 //////// ****** ocultar avion ****** ///////////
@@ -200,23 +281,23 @@ function mostrarArriba() {
 function opacarFrente() { 
   $('.frente').animate({
     opacity: '0'                               	            
-  });
+  }, "slow" );
  }
 
 function opacarAtras() { 
   $('.atras').animate({
     opacity: '0'                               	            
-  });
+  }, "slow" );
  }
 
  function opacarAbajo() { 
   $('.abajo').animate({
     opacity: '0'                               	            
- });
+ }, "slow" );
 }
 
 function opacarArriba() {  
   $('.arriba').animate({
     opacity: '0'                               	            
-  });
+  }, "slow" );
 }

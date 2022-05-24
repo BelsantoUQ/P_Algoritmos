@@ -2,7 +2,6 @@
     
     font-family: "Segoe UI",Arial,sans-serif;
 }
-
 body {
     background-color: darkgray;
 }
@@ -17,12 +16,10 @@ div .menu_bar {
     background: transparent;
     top: 1rem;
 }
-
 div .menu_bar a{
     
     display: inline-block;
     background-color: #ffffff;
-    color: #4c4c4c;
     width: 90px;
     height: 40px;
     border: solid;
@@ -42,7 +39,17 @@ div .menu_bar a{
 
     
 }
+div .menu_bar a:hover{
 
+    background-color: #428859cc;
+    color: #ffffff;
+}
+
+div .menu_bar a:active{
+
+    background-color: #1e9690b4;
+    color: #c95f5f;
+}
 div .block{
     background-color: transparent;
     left: 50px;

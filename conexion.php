@@ -13,11 +13,8 @@ $conexion = new mysqli($dbhost, $dbuser, $dbpass, $db);
 
  return $conexion;
 }
-if ($conexion->connect_error) {
 
- die("La conexion falló: " . $conexion->connect_error);
 
-}
 
 function CloseCon($conexion)
  {

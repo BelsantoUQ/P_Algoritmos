@@ -10,11 +10,10 @@
     
 </head>
 <body background="recursos/miFondo.png">
-
+    <div background="recursos/cuadricula.png">
 
     <header>
           
-            
             
     <?php
         session_start();
@@ -70,8 +69,12 @@
             <div class="menu_bar">
             <a class="turnRight">Giro <img rel="icon" src="recursos/actualizar.png"></a>
             </div>
+
+            <div class="menu_bar">
+            <a class="valiadarIntento">Validar </a>
             </div>
-            <h1>Alcanza la posicion [4][3]  </h1>
+            </div>
+            <h1>Alcanza la posicion [4][3] </h1>
             <br><br><br>
             <div class="block">
                 <div class="frente"><img src="recursos/emirates.gif"></div>
@@ -89,10 +92,12 @@
 
     </footer>
     
+    <script>var ansI=4; var ansJ= 3; var i =0; var j =0;</script>   
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="mainPrueba1.js"></script>
+    <script src="mainPrueba.js"></script>
     <div >
         <h1 class="mostrarResultados"></h1>
+    </div>
     </div>
 </body>
 </html>

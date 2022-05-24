@@ -23,7 +23,7 @@
     
     <form  class="formulario" action="validar.php" method="post">
         <h1 class="formulario__titulo">Iniciar Pruebas</h1>
-        <input name="loginCedula" id="loginCedula"   type="text" class="formulario__input" required="">
+        <input name="loginCedula" id="loginCedula" class="formulario__input" required="">
         <label  class="formulario__label">Cédula</label>
         
         <input name="loginName" id="loginName"   type="text" class="formulario__input" required="">
