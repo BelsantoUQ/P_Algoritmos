@@ -12,21 +12,21 @@ var ansI=4;
 var ansJ= 3;
 var ans= 43;
 
-let sequence = [[00, 01, 02, 03, 04, 05], 
-                [10, 11, 12, 13, 14, 15], 
-                [20, 21, 22, 23, 24, 25], 
-                [30, 31, 32, 33, 34, 35], 
-                [40, 41, 42, 43, 44, 45], 
-                [50, 51, 52, 53, 54, 55]];
+let sequence = [[00, 01, 02, 03, 04, 05, 06, 07], 
+                [10, 11, 12, 13, 14, 15, 16, 17], 
+                [20, 21, 22, 23, 24, 25, 26, 27], 
+                [30, 31, 32, 33, 34, 35, 36, 37], 
+                [40, 41, 42, 43, 44, 45, 46, 47], 
+                [50, 51, 52, 53, 54, 55, 56, 57]];
 //console.log(sequence);
 //console.log(sequence[2][2]);
 
-let bSequence = [[true, false, false, false, false, false], 
-                [false, false, false, false, false, false], 
-                [false, false, false, false, false, false], 
-                [false, false, false, false, false, false], 
-                [false, false, false, false, false, false], 
-                [false, false, false, false, false, false]];
+let bSequence = [[true, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false]];
 
   $('.atras').css({
     opacity: '0'                               	            
@@ -46,9 +46,10 @@ let bSequence = [[true, false, false, false, false, false],
      // ********//Para avanzar//************// */
 $( ".avanzar" ).click(function() {
   
+  /* movimiento horizontal*/
   if(frente){
-    if(j<5){
-    //Avanzar
+    if(j<7){
+    //Adelantar
       $( ".block" ).animate({ "left": "+=150px" }, "slow" );
       j++;
       movimientos++;
@@ -62,6 +63,8 @@ $( ".avanzar" ).click(function() {
       movimientos++;
     }
   }
+
+  /* movimiento vertical*/
   if(abajo){
     if(i<5){
     //Descender
@@ -83,9 +86,24 @@ $( ".avanzar" ).click(function() {
   }else{
     bSequence[i][j]=true;
   }
-  if(bSequence[ansI][ansJ]==true){
+  if(sequence[ansI][ansJ]==sequence[i][j]){
     //Objetivo logrado
-    console.log('GG');
+    setTimeout(() => { 
+      alert('Prueba finalizada. '+ 
+      '\n Movimientos: '+movimientos 
+      + '\n Giros: '+giros 
+      + '\n Cuadricula repetidas: '+repetidos 
+    )}, 600);
+    $.ajax({
+      method:"POST",
+      url: "mainPrueba1.php",
+      data: { movimientos,giros,repetidos}
+    })
+      .done(function(response ){
+        $('.mostrarResultados').html(response);
+      });
+      
+    
   } 
   });
 
@@ -121,7 +139,7 @@ $( ".avanzar" ).click(function() {
     }
   });
 
-  // *** /// ***Para la rotacion del objeto hacia la izquierda /// *** /// /***// //***/
+  // *** /// ***Para la rotacion del objeto hacia la derecha /// *** /// /***// //***/
   $( ".turnRight" ).click(function(){
     giros++;
     if(frente){
@@ -152,7 +170,7 @@ $( ".avanzar" ).click(function() {
   });
 
 
-//////// ******  ****** ///////////
+//////// ****** mostrar avion ****** ///////////
 function mostrarFrente() { 
   $('.frente').animate({
     opacity: '1'                               	            
@@ -177,7 +195,7 @@ function mostrarArriba() {
   });
 }
 
-//////// ******  ****** ///////////
+//////// ****** ocultar avion ****** ///////////
 
 function opacarFrente() { 
   $('.frente').animate({

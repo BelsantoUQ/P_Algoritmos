@@ -1,0 +1,218 @@
+.carItem{
+    clear:both; 
+    width:100%; 
+    height:280px; 
+    overflow:hidden; 
+    border:1px solid #e6e6e6; 
+    padding:0; 
+    margin:0 0 24px 0;
+    width: 80%;
+    margin: auto;
+}
+
+.carPic{
+    float:left; 
+    width:38%; 
+    height:100%; 
+    text-align:center
+}
+
+.carPic img{
+    max-height:100%; 
+    max-width:100%; 
+}
+
+.carIntro{
+    float:left; 
+    width:22%; 
+    padding:20px 12px;
+}
+
+
+.carIntro h2{
+    font-size:1.4em; 
+    color:#000; 
+    margin:10px 0 6px 0;
+}
+
+.carIntro h3{
+    color:rgba(30,30,30,1.00);
+    font-size:1em; 
+    font-weight:500; 
+    margin:0px 0 25px 0;
+}
+
+.carAmenities{
+    float:left; 
+    width:40%; 
+    height:100%;
+    background:#e6e6e6; 
+    padding:20px 11px;
+    overflow: hidden;
+    font-size: 25;
+    font-family: sans-serif;
+}
+
+
+.carIntro span{
+    clear:both; 
+    font-weight:600; 
+    font-size:1.4em; 
+    color:#000
+}
+
+.carIntro span small{
+    font-size:0.6em;
+    color: #666;
+    padding: 0 0 0 2px;
+    font-weight: 500;
+}
+
+.caaItem img{
+    width:20px; 
+    vertical-align:middle;
+    margin: 0 4px 0 0;
+    height: auto;
+}
+
+.caaItem{
+    display:block; 
+    width:50%; 
+    padding:0 10px 8px 10px; 
+    font-size:0.8em;
+    float: right;
+}
+
+
+.carSummary{
+    font-size:0.78em; 
+    line-height:1.2em; 
+    padding:12px 0 0 0;
+}
+
+.selectCar{
+    color: aqua;
+    display:inline-block; 
+    padding:0 20px; 
+    line-height:36px; 
+    border-radius:3px; background:rgba(30,30,30,1.00); color:#fff; cursor:pointer; margin:8px 0 0 0;
+    text-decoration: none;
+}
+
+.selectCarro{
+    display:inline-block; 
+    padding:0 20px; 
+    line-height:36px; 
+    border-radius:3px; background:rgba(60,60,60,0.30); color:#000000; cursor:pointer; margin:8px 0 0 0;
+    text-decoration: none;
+}
+
+.botones{
+     padding:0 20px; 
+     display:inline-block;
+    line-height:36px; 
+    border-radius:3px; background:rgba(0, 55, 90, 0.58); color:#000000; cursor:pointer; 
+    margin:8px 18 0 0;
+    text-decoration: none;
+   margin-left: 15%;
+    
+}
+
+#mensaje{ 
+    display:inline-block; 
+    text-decoration: none;
+    margin-left: -2%;
+    color:#050580;
+    
+}
+
+.botone{
+     padding:0 20px; 
+     display:inline-block;
+    line-height:36px; 
+    border-radius:3px; background:rgb(24, 134, 41); color:#000000; cursor:pointer; 
+    margin:8px 18 0 0;
+    text-decoration: none;
+}
+
+.botonet{
+     padding:0 20px; 
+     display:inline-block;
+    line-height:36px; 
+    border-radius:3px; background:rgba(209, 0, 0, 0.8); color:#000000; cursor:pointer; 
+    margin:8px 18 0 0;
+    text-decoration: none;
+}
+.boeli{
+     padding:0px; 
+     display:inline-block;
+    line-height:36px; 
+    border-radius:3px; background:rgba(0, 55, 90, 0.58); color:#000000; cursor:pointer; 
+    margin:8px 18 0 0;
+    text-decoration: none;
+    margin-left: 90%;
+   
+}
+
+.selectCar:hover{
+    background:rgba(1,1,100,1.00);
+    color:#fff
+}
+
+
+#flotante{
+    z-index: 100001;
+    padding: 20px;
+    top: 10px;
+    left: 600px;
+    position: fixed;
+    width: 600px;
+    max-height: 1000px;
+    background-color: white;
+    border-radius: 4px;
+    flex-wrap: wrap;
+}
+
+.formulario__inputo{
+    display: block;
+    width: 100%;
+    font-size: 1.3em;
+    
+}
+
+.formulario__inputo
+{
+    background: rgba(0,0,0,0.1);
+    padding: 6px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+    
+}
+
+.formulario__inputo{
+    background: rgba(0,0,0,0.1);
+    padding: 6px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    
+}
+
+.formulario__labelo{
+    padding-left: 15px;
+    position: absolute;
+    margin-top: -47px;
+    z-index: -20;
+    color: rgba(0,0,0,0.5);
+    transition: all 0.2s;
+}
+
+.formulario__inputo:focus{
+    outline: 1px solid rgba(0,0,0,0.7);
+}
+
+.formulario__inputo:focus + .formulario__labelo{
+    margin-top: -75px;
+}
+.fijaro{
+    margin-top: -75px;
+}

@@ -1,21 +1,26 @@
+
 <?php
- 
 function OpenCon()
+{
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$db = "analisis_proyecto";
+
+
+
+$conexion = new mysqli($dbhost, $dbuser, $dbpass, $db);
+
+ return $conexion;
+}
+if ($conexion->connect_error) {
+
+ die("La conexion falló: " . $conexion->connect_error);
+
+}
+
+function CloseCon($conexion)
  {
- $dbhost = "localhost";
- $dbuser = "root";
- $dbpass = "";
- $db = "analisis_proyecto";
- 
- 
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
- 
- 
- return $conn;
+    $conexion -> close();
  }
- 
-function CloseCon($conn)
- {
- $conn -> close();
- }
-   
+?>
