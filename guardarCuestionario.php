@@ -17,7 +17,7 @@ $regTest = mysqli_query($conn,' UPDATE `detalletest` SET `preg1`='.$preg1.',`pre
 $valTest = mysqli_query($conn,' SELECT `preg1` FROM `detalletest` WHERE `cedulaUsuario`="'.$cedulaUser.'" AND `codigoTest`="'.$codTest.'" AND `numeroPrueba`= '.$pActual);
 
 if (mysqli_num_rows($valTest)>0){
-      header ('location: prueba2.php');
+      header ('location: cerrar.php');
      
   }
   else{

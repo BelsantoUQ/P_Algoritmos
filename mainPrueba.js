@@ -11,21 +11,21 @@ var arriba =false;
 var superado = 0;
 var intentosUser = [];
 
-let sequence = [[00, 01, 02, 03, 04, 05, 06, 07], 
-                [10, 11, 12, 13, 14, 15, 16, 17], 
-                [20, 21, 22, 23, 24, 25, 26, 27], 
-                [30, 31, 32, 33, 34, 35, 36, 37], 
-                [40, 41, 42, 43, 44, 45, 46, 47], 
-                [50, 51, 52, 53, 54, 55, 56, 57]];
+let sequence = [[00, 01, 02, 03, 04, 05], 
+                [10, 11, 12, 13, 14, 15], 
+                [20, 21, 22, 23, 24, 25], 
+                [30, 31, 32, 33, 34, 35], 
+                [40, 41, 42, 43, 44, 45], 
+                [50, 51, 52, 53, 54, 55]];
 //console.log(sequence);
 //console.log(sequence[2][2]);
 
-let bSequence = [[true, false, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false, false]];
+let bSequence = [[true, false, false, false, false, false], 
+                [false, false, false, false, false, false], 
+                [false, false, false, false, false, false], 
+                [false, false, false, false, false, false], 
+                [false, false, false, false, false, false], 
+                [false, false, false, false, false, false]];
 
   $('.atras').css({
     opacity: '0'                               	            
@@ -118,7 +118,7 @@ $( ".valiadarIntento" ).click(function() {
   function driveAirplane(){
      /* movimiento horizontal*/
      if(frente){
-      if(j<7){
+      if(j<5){
       //Adelantar
       moverDerecha();
         j++;
@@ -233,22 +233,22 @@ $( ".valiadarIntento" ).click(function() {
 //////////////////**movimiento *////////////////////////
   function moverDerecha(){
     
-    $( ".block" ).animate({ "left": "+=150px" }, "slow" );
+    $( ".block" ).animate({ "left": "+=250px" }, "slow" );
   }
 
   function moverIzquierda(){
     
-    $( ".block" ).animate({ "left": "-=150px" }, "slow" );
+    $( ".block" ).animate({ "left": "-=250px" }, "slow" );
   }
 
   function moverArriba(){
     
-    $( ".block" ).animate({ "top": "-=150px" }, "slow" );
+    $( ".block" ).animate({ "top": "-=250px" }, "slow" );
   }
 
   function moverAbajo(){
     
-    $( ".block" ).animate({ "top": "+=150px" }, "slow" );
+    $( ".block" ).animate({ "top": "+=250px" }, "slow" );
   }
 
 //////// ****** mostrar avion ****** ///////////

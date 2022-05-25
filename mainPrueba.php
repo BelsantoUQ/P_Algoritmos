@@ -33,5 +33,4 @@ $output = wordwrap($ganador." -> cuadros repetidos: ".$repetidos." - giros: ".$g
 $resDetalleTest='INSERT INTO `detalletest`(`cedulaUsuario`, `codigoTest`, `numeroPrueba`, `superado`) VALUES ("'.$cedulaUser.'","'.$codTest.'","'.$numeroPrueba.'","'.$superado.'")';
 $registrarTest = mysqli_query($conn,$resDetalleTest);
 echo $output;
-CloseCon($conn);
 ?>

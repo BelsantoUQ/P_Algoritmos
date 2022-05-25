@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="estilos.css">
     
 </head>
-<body background="recursos/cuadricula.png">
+<body background="recursos/cuadricula2.png" style="background-color: #1e963cb4;">
    
     <header>
           
@@ -22,13 +22,13 @@
 
         if (isset($_SESSION['LoginIniciado'])) {
             
-            if(($_SESSION['pruebaActual'])<=1){
+            if(($_SESSION['pruebaActual'])<=2 && ($_SESSION['pruebaActual'])>=1){
              
              $name = $_SESSION ["nombre"];
             $email = $_SESSION['email'];
             $cedula = $_SESSION['cedula'];
         
-            $_SESSION ["pruebaActual"] = '1';
+            $_SESSION ["pruebaActual"] = '2';
             
             echo'
         <div>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             
-            <div class="block">
+            <div style="left: 1380px; top: 1380px;" class="block">
                 <div class="frente"><img src="recursos/emirates.gif"></div>
                 <div class="arriba"><img src="recursos/emirates3.gif"></div>
                 <div class="abajo"><img src="recursos/emirates2.gif"></div>
@@ -83,7 +83,7 @@
                 
             </div>
 
-            <div style="left: 750px; top: 1000px;"class="bloque">
+            <div style="left: 500px; top: 250px;" class="bloque">
                 <div class="frente"><img src="recursos\giphy.gif"></div>
                 
             </div>
@@ -95,7 +95,7 @@
 
     </footer>
     
-    <script>var ansI=4; var ansJ= 3; var i =0; var j =0;</script>   
+    <script>var ansI=1; var ansJ= 2; var i =5; var j =5;</script>   
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="mainPrueba.js"></script>
     <div >

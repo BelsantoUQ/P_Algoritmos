@@ -2,10 +2,9 @@
     <head>
     <title> INICIO PRUEBAS </title>
     <meta charset= "UTF-8">
-    <meta name="viewport" content= "width = device- width, user-scalable=no,
-    initial-scale1, maximum-scale=1">
         <link rel="stylesheet" href="cssInicio/estilosRegistro.css">
-        <link rel="stylesheet" href="cssInicio/fontello.css">
+       
+        
         <link rel="stylesheet" href="cssInicio/estilos.css"> 
          
 </head>
@@ -45,7 +44,7 @@
     <div class="contenedor">
         <p class="copy">Analisis de Algoritmos &copy; 2022 - Santiago, Sergio, Xiomara</p>
         <div class="sociales">
-            <a class="icon-facebook-squared" href="https://github.com/BelsantoUQ/P_Algoritmos"></a>
+            <a class="" href="https://github.com/BelsantoUQ/P_Algoritmos">github</a>
             
         
         </div>

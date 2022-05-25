@@ -26,11 +26,12 @@
         
             
             echo'
-        <li>
-            <h1 class="icon-cab" href="">'.' '.$name.'</h1>
-            <h2 class="icon-cab" href="">'.' Prueba '.$_SESSION['pruebaActual'].'</h2>
+        <div>
+        <br>
+            <h1 style="">'.' '.$name.'</h1>
             
-        </li>
+        <br>
+        </div>
         ';
              
             }else{
@@ -50,7 +51,7 @@
 </header>
      
     
-<h1>Califica de 1 a 5 donde 5 es la puntuacion más alta</h1>
+<h1>        Califica de 1 a 5 donde 5 es la puntuacion más alta</h1>
         
     <form  class="formulario" action="guardarCuestionario.php" method="post">
         <h1 class="formulario__titulo">Cuestionario de la prueba <?php echo $_SESSION['pruebaActual']."";?></h1>
@@ -76,7 +77,7 @@
     <div class="contenedor">
         <p class="copy">Analisis de Algoritmos &copy; 2022 - Santiago, Sergio, Xiomara</p>
         <div class="sociales">
-            <a class="icon-facebook-squared" href="https://github.com/BelsantoUQ/P_Algoritmos"></a>
+            <a class="" href="https://github.com/BelsantoUQ/P_Algoritmos"></a>
             
         
         </div>
