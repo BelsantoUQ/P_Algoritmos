@@ -42,6 +42,15 @@ let bSequence = [[true, false, false, false, false, false],
   });
 
 function validarObjetivo(){
+  
+  bSequence = [[true, false, false, false, false, false], 
+                  [false, false, false, false, false, false], 
+                  [false, false, false, false, false, false], 
+                  [false, false, false, false, false, false], 
+                  [false, false, false, false, false, false], 
+                  [false, false, false, false, false, false]];
+                  
+  var intentosUser = [];
   if(sequence[ansI][ansJ]==sequence[i][j]){
     //Objetivo logrado
     superado =1;
@@ -54,6 +63,17 @@ function validarObjetivo(){
       .done(function(response ){
         $('.mostrarResultados').html(response);
       });
+      
+   movimientos =0;
+   repetidos = 0;
+   giros = 0;
+
+  frente =true;
+  atras =false;
+  abajo =false;
+  arriba =false;
+
+  superado = 0;
       
     
    
@@ -279,25 +299,25 @@ function mostrarArriba() {
 //////// ****** ocultar avion ****** ///////////
 
 function opacarFrente() { 
-  $('.frente').animate({
+  $('.block .frente').animate({
     opacity: '0'                               	            
   }, "slow" );
  }
 
 function opacarAtras() { 
-  $('.atras').animate({
+  $('.block .atras').animate({
     opacity: '0'                               	            
   }, "slow" );
  }
 
  function opacarAbajo() { 
-  $('.abajo').animate({
+  $('.block .abajo').animate({
     opacity: '0'                               	            
  }, "slow" );
 }
 
 function opacarArriba() {  
-  $('.arriba').animate({
+  $('.block .arriba').animate({
     opacity: '0'                               	            
   }, "slow" );
 }
