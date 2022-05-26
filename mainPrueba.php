@@ -18,7 +18,7 @@ $numeroPrueba=$_SESSION ["pruebaActual"];
 $cedulaUser = $_SESSION['cedula'];
 $name = $_SESSION ["nombre"];
 $codTest = $cedulaUser.$name."";
-$url="cuestionario.php";
+$url="cerrar.php";
 
 if($superado==1){
     $ganador= "GANADO";
