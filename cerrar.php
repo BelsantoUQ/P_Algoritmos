@@ -4,10 +4,6 @@ if( $_SESSION ["pruebaActual"] == 3){
     
     header ('location: cuestionario.php');
 
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/main
 }else if($_SESSION ["pruebaActual"] == 2){
 
     header ('location: prueba3.php');

@@ -59,19 +59,19 @@
         <div>
             <div class="controles">
                 <div class="menu_bar">
-                    <a class="avanzar">Avanzar</a>
+                    <a class="avanzar">Avanza</a>
                 </div>
             
                 <div class="menu_bar">
-                    <a class="turnLeft">Giro <img rel="icon" src="recursos/girar-a-la-izquierda.png"></a>
+                    <a class="turnLeft">Gira <img rel="icon" src="recursos/girar-a-la-izquierda.png"></a>
                 </div>
             
                 <div class="menu_bar">
-                    <a class="turnRight">Giro <img rel="icon" src="recursos/actualizar.png"></a>
+                    <a class="turnRight">Gira <img rel="icon" src="recursos/actualizar.png"></a>
                 </div>
 
                 <div class="menu_bar">
-                    <a class="valiadarIntento">Validar </a>
+                    <a class="valiadarIntento">Valida! </a>
                 </div>
             </div>
             
@@ -99,7 +99,11 @@
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="mainPrueba.js"></script>
     <div >
-        <h1 class="mostrarResultados"></h1>
+        <h1 class="mostrarResultados" style="position: relative;"></h1>
+    </div>
+    
+    <div class="userMoves">
+        <h1 class = "userTry"></h1>
     </div>
     
 </body>

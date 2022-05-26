@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="menu_bar">
-                    <a class="valiadarIntento">Valida </a>
+                    <a class="valiadarIntento">Valida! </a>
                 </div>
             </div>
             
@@ -99,7 +99,10 @@
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="mainPrueba.js"></script>
     <div >
-        <h1 class="mostrarResultados"></h1>
+        <h1 class="mostrarResultados" style="position: relative;"></h1>
+    </div>
+    <div class="userMoves">
+        <h1 class = "userTry"></h1>
     </div>
     
 </body>
