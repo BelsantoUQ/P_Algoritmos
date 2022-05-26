@@ -13,12 +13,12 @@ $giros = utf8_decode($_POST['giros']);
 $repetidos = utf8_decode($_POST['repetidos']);
 $superado = utf8_decode($_POST['superado']);
 $pGanadas= 0;
-$ganador = "FALLADO";
+$ganador = "FALLIDO";
 $numeroPrueba=$_SESSION ["pruebaActual"];
 $cedulaUser = $_SESSION['cedula'];
 $name = $_SESSION ["nombre"];
 $codTest = $cedulaUser.$name."";
-$url="cuestionario.php";
+$url="cerrar.php";
 
 if($superado==1){
     $ganador= "GANADO";

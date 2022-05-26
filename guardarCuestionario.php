@@ -13,11 +13,13 @@ $cedulaUser = $_SESSION['cedula'];
 $name = $_SESSION ["nombre"];
 $pActual = $_SESSION ["pruebaActual"];
 $codTest = $cedulaUser.$name."";
-$regTest = mysqli_query($conn,' UPDATE `detalletest` SET `preg1`='.$preg1.',`preg2`='.$preg2.',`preg3`='.$preg3.' WHERE `cedulaUsuario`="'.$cedulaUser.'" AND `codigoTest`="'.$codTest.'"');
-$valTest = mysqli_query($conn,' SELECT `preg1` FROM `detalletest` WHERE `cedulaUsuario`="'.$cedulaUser.'" AND `codigoTest`="'.$codTest.'" AND `numeroPrueba`= '.$pActual);
+$regTest = mysqli_query($conn,' UPDATE `test` SET `preg1`='.$preg1.',`preg2`='.$preg2.',`preg3`='.$preg3.' WHERE `codigoTest`="'.$codTest.'"');
+$valConsultaTest = mysqli_query($conn,' SELECT `preg1` FROM `test` WHERE `codigoTest`="'.$codTest.'"');
 
-if (mysqli_num_rows($valTest)>0){
-      header ('location: cerrar.php');
+if (mysqli_num_rows($valConsultaTest)>0){
+  
+  session_destroy();
+  header ('location: inicio.php');
      
   }
   else{
