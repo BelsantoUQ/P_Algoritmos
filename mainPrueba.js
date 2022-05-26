@@ -50,7 +50,7 @@ function validarObjetivo(){
                   [false, false, false, false, false, false], 
                   [false, false, false, false, false, false]];
                   
-  var intentosUser = [];
+   intentosUser = [];
   if(sequence[ansI][ansJ]==sequence[i][j]){
     //Objetivo logrado
     superado =1;
@@ -58,7 +58,7 @@ function validarObjetivo(){
     $.ajax({
       method:"POST",
       url: "mainPrueba.php",
-      data: { movimientos,giros,repetidos,superado}
+      data: {movimientos,giros,repetidos,superado}
     })
       .done(function(response ){
         $('.mostrarResultados').html(response);

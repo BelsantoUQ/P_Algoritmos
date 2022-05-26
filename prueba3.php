@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="estilos.css">
     
 </head>
+<<<<<<< HEAD
 <body background="recursos/cuadricula3.png">
+=======
+<body background="recursos/cuadricula2.png" style="background-color: #1e963cb4;">
+>>>>>>> refs/remotes/origin/main
    
     <header>
           
@@ -22,9 +26,15 @@
 
         if (isset($_SESSION['LoginIniciado'])) {
             
+<<<<<<< HEAD
             if(($_SESSION['pruebaActual'])<=3 && ($_SESSION['pruebaActual'])>=2){
              
              $name = $_SESSION ["nombre"];
+=======
+            if(($_SESSION['pruebaActual'])<=3 && ($_SESSION['pruebaActual'])>=1){
+             
+            $name = $_SESSION ["nombre"];
+>>>>>>> refs/remotes/origin/main
             $email = $_SESSION['email'];
             $cedula = $_SESSION['cedula'];
         
@@ -74,18 +84,29 @@
                     <a class="valiadarIntento">Validar </a>
                 </div>
             </div>
+<<<<<<< HEAD
 <!--AVION -->
             
             <div style="left: 880; top: 630px;" class="block">
+=======
+            
+            <div style="left: 1380px; top: 1380px;" class="block">
+>>>>>>> refs/remotes/origin/main
                 <div class="frente"><img src="recursos/emirates.gif"></div>
                 <div class="arriba"><img src="recursos/emirates3.gif"></div>
                 <div class="abajo"><img src="recursos/emirates2.gif"></div>
                 <div class="atras"><img src="recursos/emirates (1).gif"></div>
                 
             </div>
+<<<<<<< HEAD
 <!--OBJETIVO -->
             <div style="left: 1000px; top: 1250px;" class="bloque">
                 <div class="frente"><img src="recursos\airplane-joy.gif"></div>
+=======
+
+            <div style="left: 252px; top: 250px;" class="bloque">
+                <div class="frente"><img src="recursos\giphy.gif"></div>
+>>>>>>> refs/remotes/origin/main
                 
             </div>
         </div>
@@ -96,7 +117,11 @@
 
     </footer>
     
+<<<<<<< HEAD
     <script>var ansI=5; var ansJ= 4; var i =2; var j =3;</script>   
+=======
+    <script>var ansI=1; var ansJ= 2; var i =5; var j =5;</script>   
+>>>>>>> refs/remotes/origin/main
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="mainPrueba.js"></script>
     <div >
