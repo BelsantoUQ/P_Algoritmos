@@ -61,8 +61,9 @@
         <input name="preg2" id="preg2" type="number" max="5" min="0" class="formulario__input" required="">
         <label  class="formulario__label">¿Que tan dificil fue para usted?</label>
 
-            <input name="preg3"  id="preg3" type="number" max="5" min="0" class="formulario__input" required="">
+        <input name="preg3"  id="preg3" type="number" max="5" min="0" class="formulario__input" required="">
         <label  class="formulario__label">¿Esta feliz con el resultado?</label>
+        
             
               <input  type="submit" class="formulario__submit" value="Enviar"><br>
                 

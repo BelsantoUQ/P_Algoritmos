@@ -12,19 +12,23 @@ var intentosUser = [];
 var iAux = i;
 var jAux = j;
 
-let sequence = [[00, 01, 02, 03, 04, 05, 06], 
-                [10, 11, 12, 13, 14, 15, 16], 
-                [20, 21, 22, 23, 24, 25, 26], 
-                [30, 31, 32, 33, 34, 35, 36], 
-                [40, 41, 42, 43, 44, 45, 46], 
-                [50, 51, 52, 53, 54, 55, 56]];
+let sequence = [[00, 01, 02, 03, 04, 05, 06, 07, 08], 
+                [10, 11, 12, 13, 14, 15, 16, 17, 18], 
+                [20, 21, 22, 23, 24, 25, 26, 27, 28], 
+                [30, 31, 32, 33, 34, 35, 36, 37, 38], 
+                [40, 41, 42, 43, 44, 45, 46, 47, 48], 
+                [50, 51, 52, 53, 54, 55, 56, 57, 58],
+                [60, 61, 62, 63, 64, 65, 66, 67, 68],
+                [70, 71, 72, 73, 74, 75, 76, 77, 78]];
 
-let bSequence = [[true, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false], 
-                [false, false, false, false, false, false, false]];
+let bSequence = [[true, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false],
+                [false, false, false, false, false, false, false, false, false],
+                [false, false, false, false, false, false, false, false, false]];
 
                 /**Ocultar los aviones */
   $('.atras').css({
@@ -81,12 +85,15 @@ function mostrarMovimiento(){
        });
      //Reinicio la variables
      
-   bSequence = [[true, false, false, false, false, false], 
-   [false, false, false, false, false, false], 
-   [false, false, false, false, false, false], 
-   [false, false, false, false, false, false], 
-   [false, false, false, false, false, false], 
-   [false, false, false, false, false, false]];
+     bSequence = [[true, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false], 
+                [false, false, false, false, false, false, false, false, false]
+                [false, false, false, false, false, false, false, false, false]
+                [false, false, false, false, false, false, false, false, false]];
+
    intentosUser = [];
    movimientos =0;
    repetidos = 0;
@@ -115,11 +122,12 @@ function mostrarMovimiento(){
   $( ".avanzar" ).click(function() {
     /* movimiento Horizontal*/
     if(frente){
-      if(jAux<6){
+      if(jAux<9){
         intentosUser.push("Moverse");
         jAux++;
         mostrarMovimiento();
       }
+      
     }
 
     if(atras){
@@ -132,7 +140,7 @@ function mostrarMovimiento(){
     }
     /* movimiento vertical*/
     if(abajo){
-      if(iAux<5){
+      if(iAux<8){
         iAux++;
     intentosUser.push("Moverse");
     mostrarMovimiento();
@@ -168,7 +176,7 @@ function mostrarMovimiento(){
   function driveAirplane(){
      /* movimiento horizontal*/
      if(frente){
-      if(j<6){
+      if(j<9){
       //Adelantar
       moverDerecha();
         j++;
@@ -186,7 +194,7 @@ function mostrarMovimiento(){
   
     /* movimiento vertical*/
     if(abajo){
-      if(i<5){
+      if(i<8){
       //Descender
       moverAbajo();
         i++;

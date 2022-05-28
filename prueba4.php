@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="estilos.css">
     
 </head>
-<body background="recursos/cuadricula2.png" style="background-color: #1e963cb4;">
+<body background="recursos/cuadricula4.png">
    
     <header>
           
-    <h1>Busca y Alcanza el Objetivo</h1>
+    <h1>Busca la pista del aeropuerto y llega a ella</h1>
             
     <?php
         session_start();
@@ -22,13 +22,13 @@
 
         if (isset($_SESSION['LoginIniciado'])) {
             
-            if(($_SESSION['pruebaActual'])<=2 && ($_SESSION['pruebaActual'])>=1){
+            if(($_SESSION['pruebaActual'])<=4 && ($_SESSION['pruebaActual'])>=3){
              
              $name = $_SESSION ["nombre"];
             $email = $_SESSION['email'];
             $cedula = $_SESSION['cedula'];
         
-            $_SESSION ["pruebaActual"] = '2';
+            $_SESSION ["pruebaActual"] = '4';
             
             echo'
         <div>
@@ -74,17 +74,18 @@
                     <a class="valiadarIntento">Valida! </a>
                 </div>
             </div>
+<!--AVION -->
             
-            <div style="left: 1380px; top: 1380px;" class="block">
+            <div style="left: 1625px; top: 400px;" class="block">
                 <div class="frente"><img src="recursos/emirates.gif"></div>
                 <div class="arriba"><img src="recursos/emirates3.gif"></div>
                 <div class="abajo"><img src="recursos/emirates2.gif"></div>
                 <div class="atras"><img src="recursos/emirates (1).gif"></div>
                 
             </div>
-
-            <div style="left: 500px; top: 250px;" class="bloque">
-                <div class="frente"><img src="recursos\giphy.gif"></div>
+<!--OBJETIVO -->
+            <div style="left: 525px; top: 800px;" class="bloque">
+                <div class="frente"><img src="recursos\pista-de-aterrizaje.jpg"></div>
                 
             </div>
         </div>
@@ -95,12 +96,13 @@
 
     </footer>
     
-    <script>var ansI=1; var ansJ= 2; var i =5; var j =5;</script>   
+    <script>var ansI=3; var ansJ= 2; var i =1; var j =6;</script>   
 	<script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="mainPrueba.js"></script>
     <div >
         <h1 class="mostrarResultados" style="position: relative;"></h1>
     </div>
+    
     <div class="userMoves">
         <h1 class = "userTry"></h1>
     </div>
