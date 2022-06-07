@@ -84,7 +84,7 @@
                 
             </div>
 <!--OBJETIVO -->
-            <div style="left: 1750px; top: 750px;" class="bloque">
+            <div style="left: 1800px; top: 800px;" class="bloque">
                 <div class="frente"><img src="recursos\kong.gif"></div>
                 
             </div>

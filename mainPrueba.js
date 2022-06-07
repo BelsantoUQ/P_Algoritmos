@@ -54,7 +54,7 @@ function mostrarMovimiento(){
   function dibujar_despacio(x) {
       if (x < intentosUser.length) {
         console.log(x);
-        if(intentosUser[x]=="Moverse"){
+        if(intentosUser[x]=="Avanza"){
           driveAirplane();
         }
         if(intentosUser[x]=="Giro izquierda"){
@@ -123,7 +123,7 @@ function mostrarMovimiento(){
     /* movimiento Horizontal*/
     if(frente){
       if(jAux<9){
-        intentosUser.push("Moverse");
+        intentosUser.push("Avanza");
         jAux++;
         mostrarMovimiento();
       }
@@ -133,7 +133,7 @@ function mostrarMovimiento(){
     if(atras){
       if(jAux>0){
         
-    intentosUser.push("Moverse");
+    intentosUser.push("Avanza");
     jAux--;
     mostrarMovimiento();
       }
@@ -142,7 +142,7 @@ function mostrarMovimiento(){
     if(abajo){
       if(iAux<8){
         iAux++;
-    intentosUser.push("Moverse");
+    intentosUser.push("Avanza");
     mostrarMovimiento();
       }
     }
@@ -151,7 +151,7 @@ function mostrarMovimiento(){
       if(iAux>0){
         
         iAux--;
-        intentosUser.push("Moverse");
+        intentosUser.push("Avanza");
         mostrarMovimiento();
       }
     }
