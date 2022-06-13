@@ -39,7 +39,7 @@ $pregIncorrecta4= mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(numeroPru
 $pregCorrecta5= mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(numeroPrueba) FROM detalletest WHERE numeroPrueba=5 AND superado=1"))["COUNT(numeroPrueba)"];
 $pregIncorrecta5= mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(numeroPrueba) FROM detalletest WHERE numeroPrueba=5 AND superado=0"))["COUNT(numeroPrueba)"];
 
-$listadoUsers = mysqli_query($conn, "SELECT u.nombre, t.calificacion, u.email FROM detalletest d, usuario u, test t WHERE d.cedulaUsuario=u.cedula AND t.codigo=d.codigoTest GROUP BY t.calificacion DESC"); // resultados de la prueba 1
+$listadoUsers = mysqli_query($conn, "SELECT DISTINCT u.nombre, t.calificacion, u.email FROM detalletest d, usuario u, test t WHERE d.cedulaUsuario=u.cedula AND t.codigo=d.codigoTest ORDER BY t.calificacion DESC"); // resultados de la prueba 1
 
 $resultadoX = mysqli_query($conn, "SELECT superado FROM detalletest WHERE numeroPrueba=1"); // resultados de la prueba 1
 $resultadoY = mysqli_query($conn, "SELECT preg1 FROM test");//resultados del cuestionario 1
