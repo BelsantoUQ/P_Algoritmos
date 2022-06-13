@@ -2,6 +2,8 @@
     <head>
     <title> INICIO PRUEBAS </title>
     <meta charset= "UTF-8">
+    
+    <link rel="stylesheet" href="estilosReusltados.css"> 
         <link rel="stylesheet" href="cssInicio/estilosRegistro.css">
        
         
@@ -9,14 +11,19 @@
          
 </head>
 
-
-<body>
 <header>
+<nav>
+			<ul>
+				<li><a href="vistaCalculos.php">ESTADISTICAS</a></li>
+				
+		</nav>
     <?php
         session_start();
 
     ?>
 </header>
+<body>
+
      
     
     

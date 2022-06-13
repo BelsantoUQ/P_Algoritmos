@@ -129,6 +129,7 @@ h1{
     font-size: 36px;
     color: whitesmoke;
     background-color: #a51f1f85;
+    border-radius: 5%;
 }
 h2{
     text-align: center;

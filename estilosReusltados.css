@@ -1,0 +1,79 @@
+* {
+	margin:0;
+	padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+header nav ul {
+	list-style:none;
+    display: table;
+    width: 100%;
+    
+    
+}
+
+
+header nav ul li:hover{
+    background: white;
+}
+
+header nav ul li a:hover {
+	color:rgb(122, 58, 21);
+}
+header nav ul li a {
+    
+	color:black;
+	display:block;
+    font-size: 2.5rem;
+    font-weight: large;
+    text-align: center;
+	text-decoration:none;
+    
+    background-color: #3b34798e;
+    margin-right: 35px;
+}
+
+main .card{
+padding: 10px;
+margin: 10px;
+ width: 70%;
+ border-radius: 40px;
+ left: 15%;
+ position: relative;
+ display: inline-block;
+ background-color: #5cbba38e;
+}
+
+.card ul{
+    list-style:none;
+    display: table;
+    width: 100%;
+    background-color: #3a79344d;
+    
+    border-radius: 50px;
+    text-align: justify;
+}
+
+.card ul li{
+    display: table-cell;
+    position: relative;
+    -webkit-transition:all 700ms ease;
+    -o-transition:all 700ms ease;
+    transition:all 700ms ease;
+}
+.card .questions{
+    background-color: #a53560c4;
+    text-align: center;
+}
+.card .questions li{
+    width: 50%;
+}
+
+.card .coeficiente{
+    
+    background-color: #90a535c4;
+}
