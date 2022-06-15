@@ -29,11 +29,11 @@
         <main>
             <div class="card">
                 <ul class="coeficiente">
-                    <li><h2>Prueba: 1</h2></li>
+                    <li><h2>Prueba 1</h2></li>
                     <li><h3>Coeficiente de Correlacion: <?php echo $coeficienteCorrel ?></h3></li>
                 </ul>
                 <ul>
-                    <li><h2>Prueba: 1</h2></li>
+                    <li><h2>Prueba 1</h2></li>
                     <li><h3>Promedio: <?php echo $promedio1 ?>%</h3></li>
                     <li><h3>Correctas: <?php echo $pregCorrecta1 ?></h3></li>
                     <li><h3>Incorrectas: <?php echo $pregIncorrecta1 ?></h3></li>
@@ -65,16 +65,16 @@
                 </ul>
 
                 <ul class="questions">
-                    <li><h2>¿Recomendaria la prueba?</h2></li>
-                    <li><h3>Promedio: <?php echo $promedioQ1 ?></h3></li>
+                    <li><h2>¿Recomendaría la prueba?</h2></li>
+                    <li><h3>Promedio: <?php echo $promedioQ1 ?>/5</h3></li>
                 </ul>
                 <ul class="questions">
                     <li><h2>¿Que tan dificil fue para usted?</h2></li>
-                    <li><h3>Promedio: <?php echo $promedioQ2 ?></h3></li>
+                    <li><h3>Promedio: <?php echo $promedioQ2 ?>/5</h3></li>
                 </ul>
                 <ul class="questions">
-                    <li><h2>¿Esta feliz con el resultado?</h2></li>
-                    <li><h3>Promedio: <?php echo $promedioQ3 ?></h3></li>
+                    <li><h2>¿Está feliz con el resultado?</h2></li>
+                    <li><h3>Promedio: <?php echo $promedioQ3 ?>/5</h3></li>
                 </ul>
             </div>
 

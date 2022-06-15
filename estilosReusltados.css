@@ -56,21 +56,27 @@ margin: 10px;
 }
 
 .card ul li{
+    width: 20%;
     display: table-cell;
     position: relative;
     -webkit-transition:all 700ms ease;
     -o-transition:all 700ms ease;
     transition:all 700ms ease;
 }
-.card .questions{
-    background-color: #a53560c4;
-    text-align: center;
+
+.card .coeficiente li{
+    width: auto;
 }
+
 .card .questions li{
     width: 50%;
 }
 
+.card .questions{
+    background-color: #a53560c4;
+    text-align: center;
+}
 .card .coeficiente{
-    
+    text-align: center;
     background-color: #90a535c4;
 }
