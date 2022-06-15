@@ -1,4 +1,4 @@
-
+//variables paraguardar datos
 var movimientos =0;
 var repetidos = 0;
 var giros = 0;
@@ -11,7 +11,7 @@ var superado = 0;
 var intentosUser = [];
 var iAux = i;
 var jAux = j;
-
+//este es el mapa, y los espacios donde se puede mover
 let sequence = [[00, 01, 02, 03, 04, 05, 06, 07, 08], 
                 [10, 11, 12, 13, 14, 15, 16, 17, 18], 
                 [20, 21, 22, 23, 24, 25, 26, 27, 28], 
@@ -20,8 +20,8 @@ let sequence = [[00, 01, 02, 03, 04, 05, 06, 07, 08],
                 [50, 51, 52, 53, 54, 55, 56, 57, 58],
                 [60, 61, 62, 63, 64, 65, 66, 67, 68],
                 [70, 71, 72, 73, 74, 75, 76, 77, 78]];
-
-let bSequence = [[true, false, false, false, false, false, false, false, false], 
+//esta es la ruta que lleva y me sirve para saber cuando pasa sobre una casilla mas de una vez
+let bSequence = [[false, false, false, false, false, false, false, false, false], 
                 [false, false, false, false, false, false, false, false, false], 
                 [false, false, false, false, false, false, false, false, false], 
                 [false, false, false, false, false, false, false, false, false], 
@@ -30,7 +30,9 @@ let bSequence = [[true, false, false, false, false, false, false, false, false],
                 [false, false, false, false, false, false, false, false, false],
                 [false, false, false, false, false, false, false, false, false]];
 
-                /**Ocultar los aviones */
+bSequence[i][j]=true;
+
+  /**Ocultar los aviones */
   $('.atras').css({
     opacity: '0'                               	            
   });
@@ -40,8 +42,9 @@ let bSequence = [[true, false, false, false, false, false, false, false, false],
   $('.arriba').css({
     opacity: '0'                               	            
   });
+//** */
 
-/**Muestra el movimiento */
+/**funcion que Muestra el movimiento que el usuario realiza*/
 function mostrarMovimiento(){
   userTry="";
   for (let index = 0; index < intentosUser.length; index++) {
@@ -50,7 +53,8 @@ function mostrarMovimiento(){
   }
   $('.userTry').html(userTry);
 }
-  // **//Funcion recurciva avanzar 1 movimiento a la vez con intervalos de 1 seg//***// */
+
+  // **//Funcion recursiva avanza 1 movimiento a la vez con intervalos de 1 seg
   function dibujar_despacio(x) {
       if (x < intentosUser.length) {
         console.log(x);
@@ -68,7 +72,7 @@ function mostrarMovimiento(){
         validarObjetivo();
       }
   }  
-
+  //valida el recorrido ademas de guardar los datos de la prueba actual
   function validarObjetivo(){
     //Objetivo logrado
    if(sequence[ansI][ansJ]==sequence[i][j]){
@@ -83,8 +87,9 @@ function mostrarMovimiento(){
        .done(function(response ){
          $('.mostrarResultados').html(response);
        });
-     //Reinicio la variables
-     
+
+
+     //Reinicio variables para siguientes pruebas
      bSequence = [[true, false, false, false, false, false, false, false, false], 
                 [false, false, false, false, false, false, false, false, false], 
                 [false, false, false, false, false, false, false, false, false], 
@@ -107,7 +112,7 @@ function mostrarMovimiento(){
    jAux=0;
        
  }
-
+//esta funcion se activa cuando el usuario presiona el boton validar
   $( ".valiadarIntento" ).click(function() {
 
  
@@ -118,10 +123,14 @@ function mostrarMovimiento(){
     dibujar_despacio(0);
   
   });
-
+  
+//esta funcion se activa cuando el usuario presiona el boton avanzar
   $( ".avanzar" ).click(function() {
+    
+    //aqui debo validar hacia adonde esta mirando el avion para saber hacia donde avanzar(arriba, abajo, izquierda, derecha)
+    
     /* movimiento Horizontal*/
-    if(frente){
+    if(frente){ //derecha
       if(jAux<9){
         intentosUser.push("Avanza");
         jAux++;
@@ -130,7 +139,7 @@ function mostrarMovimiento(){
       
     }
 
-    if(atras){
+    if(atras){//izquierda
       if(jAux>0){
         
     intentosUser.push("Avanza");
@@ -138,6 +147,7 @@ function mostrarMovimiento(){
     mostrarMovimiento();
       }
     }
+
     /* movimiento vertical*/
     if(abajo){
       if(iAux<8){
@@ -158,6 +168,8 @@ function mostrarMovimiento(){
     
   });
 
+  
+//esta funcion se activa cuando el usuario presiona el boton girarIzq
   $(".turnLeft").click(function(){
     giros++;
     intentosUser.push("Giro izquierda");
@@ -165,6 +177,8 @@ function mostrarMovimiento(){
     clickGiroIzq();
   });
 
+  
+//esta funcion se activa cuando el usuario presiona el boton girarDer
   $( ".turnRight" ).click(function(){
     giros++;
     
@@ -172,10 +186,13 @@ function mostrarMovimiento(){
     mostrarMovimiento();
     clickGiroDer();
   });
-  ///***********Mueve el avion */
+
+  ///***********funciones que Mueven el avion */
   function driveAirplane(){
      /* movimiento horizontal*/
-     if(frente){
+    //aqui debo validar hacia adonde esta mirando el avion para saber hacia donde avanzar(arriba, abajo, izquierda, derecha)
+
+     if(frente){//derecha
       if(j<9){
       //Adelantar
       moverDerecha();
@@ -183,7 +200,7 @@ function mostrarMovimiento(){
         movimientos++;
       }
     }
-    if(atras){
+    if(atras){//izquierda
       if(j>0){
       //Atrasar
       moverIzquierda();
@@ -219,9 +236,10 @@ function mostrarMovimiento(){
  
   }
 
-   //*****Para la rotacion del objeto hacia la izquierda*/
+   //*****funcion para la rotacion del objeto hacia la izquierda*/
+   //lo que hace es ocultar 3 aviones y mostrar 1 
   function giroIzq(){
-    if(frente){
+    if(frente){//si esta de frende y gira hacia la izq entonces estará hacia arriba 
       opacarFrente();
       mostrarArriba();
       frente=false;
@@ -314,10 +332,10 @@ function mostrarMovimiento(){
     }
   }
 
-  ///////////////**movimiento *////////////////////////
+  ///////////////**funcion para el movimiento: desplazo el bloque que contiene el avion 250px*////////////////////////
   function moverDerecha(){
     
-    $( ".block" ).animate({ "left": "+=250px" }, "slow" );
+    $( ".block" ).animate({ "left": "+=250px" }, "slow" ); 
   }
   function moverIzquierda(){
     

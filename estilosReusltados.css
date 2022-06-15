@@ -6,8 +6,6 @@
     box-sizing: border-box;
 }
 
-
-
 header nav ul {
 	list-style:none;
     display: table;
@@ -15,7 +13,6 @@ header nav ul {
     
     
 }
-
 
 header nav ul li:hover{
     background: white;

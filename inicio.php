@@ -2,11 +2,8 @@
     <head>
     <title> INICIO PRUEBAS </title>
     <meta charset= "UTF-8">
-    
     <link rel="stylesheet" href="estilosReusltados.css"> 
         <link rel="stylesheet" href="cssInicio/estilosRegistro.css">
-       
-        
         <link rel="stylesheet" href="cssInicio/estilos.css"> 
          
 </head>

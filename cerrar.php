@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+//aqui valido en que prueba se encuentra, si ya es la quinta lo redirijo al cuestionario 
 if( $_SESSION ["pruebaActual"] == 5){
     
     header ('location: cuestionario.php');

@@ -25,12 +25,12 @@ if($superado==1){
     $_SESSION ["pruebasGanadas"]++;
     $pGanadas= $_SESSION ["pruebasGanadas"];
     
-    $ingresarWin = 'UPDATE `test` SET `calificacion`= '.$pGanadas.' WHERE `codigo`= "'.$codTest.'"';
+    $ingresarWin = 'UPDATE `test` SET `calificacion`= '.$pGanadas.' WHERE `codigo`= "'.$codTest.'"';//si la prueba es superada con exito entonces guardo el resultado en la bd
     $registrarWin = mysqli_query($conn,$ingresarWin);
-}
-$output = wordwrap($ganador." -> cuadros repetidos: ".$repetidos." - giros: ".$giros." - movimientos: ".$movimientos."  <a href=".$url.">Continuar</a>", 60, "<br>");
+}//devuelvo informacion sopre la ronda ademas de un boton para que continué a la siguiente prueba
+$output = wordwrap($ganador." -> cuadros repetidos: ".$repetidos." - giros: ".$giros." - movimientos: ".$movimientos."  <a href=".$url.">Continuar</a>", 60, "<br>"); 
 
-$resDetalleTest='INSERT INTO `detalletest`(`cedulaUsuario`, `codigoTest`, `numeroPrueba`, `superado`) VALUES ("'.$cedulaUser.'","'.$codTest.'","'.$numeroPrueba.'","'.$superado.'")';
+$resDetalleTest='INSERT INTO `detalletest`(`cedulaUsuario`, `codigoTest`, `numeroPrueba`, `superado`) VALUES ("'.$cedulaUser.'","'.$codTest.'","'.$numeroPrueba.'","'.$superado.'")';//guardo los datos sobre la prueba en la bd
 $registrarTest = mysqli_query($conn,$resDetalleTest);
 echo $output;
 ?>

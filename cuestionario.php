@@ -32,7 +32,7 @@
             $cedula = $_SESSION['cedula'];
             $ganadas = $_SESSION ["pruebasGanadas"];
             $cc= $_SESSION ["cedula"];
-            
+            //valido mediante consultas a la bd, los resultados del usuario, si es 0 es por que perdió
             if(mysqli_fetch_assoc(mysqli_query($conn, "SELECT superado FROM detalletest WHERE numeroPrueba=1 AND cedulaUsuario='".$cc."'"))["superado"]==1){
                 $p1 ="EXITO";
             }else{
