@@ -1,0 +1,6 @@
+en este video esta bien y corta la explicacion de como
+instalar la libreria trader a xampp, esta libreria 
+contiene una funcion llamadar trade_correl la cual
+calcula el coeficiente de correlación 
+(https://www.php.net/manual/en/function.trader-correl.php)
+https://www.youtube.com/watch?v=wMbUjK7W558
