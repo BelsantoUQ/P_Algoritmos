@@ -30,7 +30,7 @@
             <div class="card">
                 <ul class="coeficiente">
                     <li><h2>Prueba 1</h2></li>
-                    <li><h3>Coeficiente de Correlacion: <?php echo $coeficienteCorrel ?></h3></li>
+                    <li><h3>Coeficiente de Correlación: <?php echo $coeficienteCorrel ?></h3></li>
                 </ul>
                 <ul>
                     <li><h2>Prueba 1</h2></li>
@@ -69,7 +69,7 @@
                     <li><h3>Promedio: <?php echo $promedioQ1 ?>/5</h3></li>
                 </ul>
                 <ul class="questions">
-                    <li><h2>¿Que tan dificil fue para usted?</h2></li>
+                    <li><h2>¿Qué tan difícil fue para usted?</h2></li>
                     <li><h3>Promedio: <?php echo $promedioQ2 ?>/5</h3></li>
                 </ul>
                 <ul class="questions">

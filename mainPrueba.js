@@ -11,6 +11,7 @@ var superado = 0;
 var intentosUser = [];
 var iAux = i;
 var jAux = j;
+
 //este es el mapa, y los espacios donde se puede mover
 let sequence = [[00, 01, 02, 03, 04, 05, 06, 07, 08], 
                 [10, 11, 12, 13, 14, 15, 16, 17, 18], 
@@ -20,6 +21,7 @@ let sequence = [[00, 01, 02, 03, 04, 05, 06, 07, 08],
                 [50, 51, 52, 53, 54, 55, 56, 57, 58],
                 [60, 61, 62, 63, 64, 65, 66, 67, 68],
                 [70, 71, 72, 73, 74, 75, 76, 77, 78]];
+
 //esta es la ruta que lleva y me sirve para saber cuando pasa sobre una casilla mas de una vez
 let bSequence = [[false, false, false, false, false, false, false, false, false], 
                 [false, false, false, false, false, false, false, false, false], 
@@ -50,6 +52,7 @@ function mostrarMovimiento(){
   for (let index = 0; index < intentosUser.length; index++) {
     
     userTry=userTry+"-"+intentosUser[index];
+
   }
   $('.userTry').html(userTry);
 }
@@ -72,6 +75,7 @@ function mostrarMovimiento(){
         validarObjetivo();
       }
   }  
+
   //valida el recorrido ademas de guardar los datos de la prueba actual
   function validarObjetivo(){
     //Objetivo logrado
@@ -90,7 +94,7 @@ function mostrarMovimiento(){
 
 
      //Reinicio variables para siguientes pruebas
-     bSequence = [[true, false, false, false, false, false, false, false, false], 
+     bSequence = [[false, false, false, false, false, false, false, false, false], 
                 [false, false, false, false, false, false, false, false, false], 
                 [false, false, false, false, false, false, false, false, false], 
                 [false, false, false, false, false, false, false, false, false], 
